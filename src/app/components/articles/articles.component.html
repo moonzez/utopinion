@@ -1,8 +1,12 @@
 <div class="container">
   <div class='row row-cols-1 row-cols-sm-2 row-cols-md-4'>
     <div class="col mb-3" *ngFor="let article of articles">
-      <div class="card">
-        {{article.title}}
+      <div class="card clickable" routerLink="/article/{{article.id}}">
+        <img src="{{article.image}}" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">{{article.title}}</h5>
+          <p class="card-text">{{article.description}}</p>
+        </div>
       </div>
     </div>
   </div>

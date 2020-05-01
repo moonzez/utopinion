@@ -19,4 +19,7 @@ export class ArticlesComponent implements OnInit {
   getArticles() {
     this.articles = this.articlesService.getArticles();
   }
+  getToArticle(id) {
+    console.log(id);
+  }
 }
