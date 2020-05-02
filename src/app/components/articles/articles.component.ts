@@ -8,7 +8,7 @@ import { Article } from '../../models/article';
   styleUrls: ['./articles.component.scss']
 })
 export class ArticlesComponent implements OnInit {
-  articles:Article[] = [];
+  articles:Article[];
 
   constructor(private articlesService:ArticlesService) { }
 
@@ -17,9 +17,6 @@ export class ArticlesComponent implements OnInit {
   }
 
   getArticles() {
-    this.articles = this.articlesService.getArticles();
-  }
-  getToArticle(id) {
-    console.log(id);
+    this.articlesService.getArticles().subscribe(res => this.articles = res);
   }
 }
